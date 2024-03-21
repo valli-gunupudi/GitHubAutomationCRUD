@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Smoke_Suite" class="navigator-link">
+              <span class="suite-name border-passed">Smoke Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Smoke_Suite" class="navigator-link ">
+                    <span>C:\Users\gnage\eclipse-workspace\GitHubAutomationCRUD\src\test\resources\TestNG_XMLs\SmokeSuiteFunctionality.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Smoke_Suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Smoke_Suite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Smoke_Suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Smoke_Suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Smoke_Suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Smoke_Suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">8 methods,   8 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Smoke_Suite" class="hide-methods passed suite-Smoke_Suite"> (hide)</a> <!-- hide-methods passed suite-Smoke_Suite -->
+                      <a href="#" panel-name="suite-Smoke_Suite" class="show-methods passed suite-Smoke_Suite"> (show)</a> <!-- show-methods passed suite-Smoke_Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Smoke_Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Smoke_Suite" title="com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality" class="method navigator-link" hash-for-method="validateCreateRepofunctionality">validateCreateRepofunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Smoke_Suite" title="com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality" class="method navigator-link" hash-for-method="validateDeleteRepoFunctionality">validateDeleteRepoFunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Smoke_Suite" title="com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality" class="method navigator-link" hash-for-method="validateDeletedRepoErrorfunctionality">validateDeletedRepoErrorfunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Smoke_Suite" title="com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality" class="method navigator-link" hash-for-method="validateExistingRepoErrorfunctionality">validateExistingRepoErrorfunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Smoke_Suite" title="com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality" class="method navigator-link" hash-for-method="validateGetAllRepos">validateGetAllRepos</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Smoke_Suite" title="com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality" class="method navigator-link" hash-for-method="validateGetNonExistSingleRepo">validateGetNonExistSingleRepo</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Smoke_Suite" title="com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality" class="method navigator-link" hash-for-method="validateGetSingleRepo">validateGetSingleRepo</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Smoke_Suite" title="com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality" class="method navigator-link" hash-for-method="validateUpdateRepofunctionality">validateUpdateRepofunctionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Smoke_Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Smoke_Suite" class="panel Smoke_Suite">
+          <div class="suite-Smoke_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateCreateRepofunctionality">
+                  </a> <!-- validateCreateRepofunctionality -->
+                  <span class="method-name">validateCreateRepofunctionality</span>
+                  <em>
+(validate get data object)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateDeleteRepoFunctionality">
+                  </a> <!-- validateDeleteRepoFunctionality -->
+                  <span class="method-name">validateDeleteRepoFunctionality</span>
+                  <em>
+(delete data functionality)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateDeletedRepoErrorfunctionality">
+                  </a> <!-- validateDeletedRepoErrorfunctionality -->
+                  <span class="method-name">validateDeletedRepoErrorfunctionality</span>
+                  <em>
+(validate deleted data in the get data object)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateExistingRepoErrorfunctionality">
+                  </a> <!-- validateExistingRepoErrorfunctionality -->
+                  <span class="method-name">validateExistingRepoErrorfunctionality</span>
+                  <em>
+(validate get data object)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateGetAllRepos">
+                  </a> <!-- validateGetAllRepos -->
+                  <span class="method-name">validateGetAllRepos</span>
+                  <em>
+(validate get data object)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateGetNonExistSingleRepo">
+                  </a> <!-- validateGetNonExistSingleRepo -->
+                  <span class="method-name">validateGetNonExistSingleRepo</span>
+                  <em>
+(validate get data object)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateGetSingleRepo">
+                  </a> <!-- validateGetSingleRepo -->
+                  <span class="method-name">validateGetSingleRepo</span>
+                  <em>
+(validate get data object)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateUpdateRepofunctionality">
+                  </a> <!-- validateUpdateRepofunctionality -->
+                  <span class="method-name">validateUpdateRepofunctionality</span>
+                  <em>
+(validate get data object)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Smoke_Suite-class-passed -->
+        </div> <!-- panel Smoke_Suite -->
+        <div panel-name="test-xml-Smoke_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\gnage\eclipse-workspace\GitHubAutomationCRUD\src\test\resources\TestNG_XMLs\SmokeSuiteFunctionality.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Smoke Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.github.listeners.TestEventListenersUtility&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Github functionality&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Github functionality --&gt;
+&lt;/suite&gt; &lt;!-- Smoke Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Smoke_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Smoke Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Github functionality (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Smoke_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Smoke Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Smoke_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Smoke Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Smoke_Suite');
+function tableData_Smoke_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(8);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'validateGetSingleRepo')
+data.setCell(0, 2, 'com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality')
+data.setCell(0, 3, 1700);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'validateCreateRepofunctionality')
+data.setCell(1, 2, 'com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality')
+data.setCell(1, 3, 984);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'validateUpdateRepofunctionality')
+data.setCell(2, 2, 'com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality')
+data.setCell(2, 3, 769);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'validateDeleteRepoFunctionality')
+data.setCell(3, 2, 'com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality')
+data.setCell(3, 3, 479);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'validateExistingRepoErrorfunctionality')
+data.setCell(4, 2, 'com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality')
+data.setCell(4, 3, 398);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'validateGetAllRepos')
+data.setCell(5, 2, 'com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality')
+data.setCell(5, 3, 388);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'validateDeletedRepoErrorfunctionality')
+data.setCell(6, 2, 'com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality')
+data.setCell(6, 3, 309);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'validateGetNonExistSingleRepo')
+data.setCell(7, 2, 'com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality')
+data.setCell(7, 3, 297);
+window.suiteTableData['Smoke_Suite']= { tableData: data, tableDiv: 'times-div-Smoke_Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <div id="times-div-Smoke_Suite">
+              </div> <!-- times-div-Smoke_Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Smoke_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Smoke Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Smoke_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Smoke_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.github.tests.CRUD.ValidateAddAndDeleteData_Functionality</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">beforeSuite</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">308 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">validateGetSingleRepo</span>
+                <span class="method-start">735 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">validateGetNonExistSingleRepo</span>
+                <span class="method-start">2456 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">validateGetAllRepos</span>
+                <span class="method-start">2757 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">validateCreateRepofunctionality</span>
+                <span class="method-start">3147 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">validateExistingRepoErrorfunctionality</span>
+                <span class="method-start">4133 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">validateUpdateRepofunctionality</span>
+                <span class="method-start">4533 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">validateDeleteRepoFunctionality</span>
+                <span class="method-start">5304 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">validateDeletedRepoErrorfunctionality</span>
+                <span class="method-start">5787 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

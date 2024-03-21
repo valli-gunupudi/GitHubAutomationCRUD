@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "full_name": {
+      "type": "string"
+    },
+    "default_branch": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "private": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "full_name",
+    "default_branch",
+    "node_id",
+    "private"
+  ]
+}
