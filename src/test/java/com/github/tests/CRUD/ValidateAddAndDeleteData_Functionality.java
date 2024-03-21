@@ -4,6 +4,7 @@ import com.github.base.APIHelper;
 import com.github.base.BaseTest;
 
 import io.restassured.common.mapper.TypeRef;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import com.github.requestPOJO.CreateRepositoryReq;
 import com.github.requestPOJO.UpdateRepoRequest;
@@ -66,14 +67,17 @@ public class ValidateAddAndDeleteData_Functionality extends BaseTest {
     public void validateGetAllRepos() {
         Response data = apiHelper.getAllRepos(EnvironmentDetails.getProperty("OWNER"));
         data.then().statusCode(200);
+        data.prettyPrint();
         //List<GetRepoResponse> getRepoResponseList = data.getBody().as(new TypeRef<List<GetRepoResponse.class>>() {
         //});        
-        GetRepoResponse[] getRepoResponse= data.as(GetRepoResponse[].class);
+        GetRepoResponse[] getRepoResponseList= data.as(GetRepoResponse[].class);
         
         System.out.println("statusCode:"+data.statusCode());
-        System.out.println("total no. of repos "+getRepoResponse.length);
-        for (GetRepoResponse dataResponse : getRepoResponse) {
-            if (!dataResponse.isPrivate())
+        System.out.println("total no. of repos "+getRepoResponseList.length);
+        for (GetRepoResponse dataResponse : getRepoResponseList) {
+        	//data.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("ExpectedJsonSchema/GetAllRepoResponseSchema.json"));
+        	JsonSchemaValidate.validateSchemaInClassPath(data, "ExpectedJsonSchema/GetAllRepoResponseSchema.json");         
+        	if (!dataResponse.isPrivate()) 
                 System.out.println(dataResponse.getFull_name()+" "+dataResponse.isPrivate());
         }
         Assert.assertEquals(data.header("content-Type"), "application/json; charset=utf-8", "header type not matching");
@@ -82,7 +86,7 @@ public class ValidateAddAndDeleteData_Functionality extends BaseTest {
     
     @Test(priority = 3, description = "validate get data object", dependsOnMethods = "validateGetAllRepos")
     public void validateCreateRepofunctionality() {
-    	name = "API-Testing";
+    	name = "NPI-Testing";
     	description = "This is your first repo!";
     	homepage = "https://github.com";
     	privateValue = true;    	
@@ -94,7 +98,7 @@ public class ValidateAddAndDeleteData_Functionality extends BaseTest {
         
         CreateRepositoryRes createRepoResponse  = data.as(CreateRepositoryRes.class);
         Assert.assertEquals(data.getStatusCode(), HttpStatus.SC_CREATED, "Create functionality is not working as expected.");
-        Assert.assertEquals(createRepoResponse.getName(), "API-Testing", "create data functionality is not working as expected, name is not matching");;
+        Assert.assertEquals(createRepoResponse.getName(), "NPI-Testing", "create data functionality is not working as expected, name is not matching");;
         Assert.assertEquals(createRepoResponse.getOwner().getLogin(),"valli-gunupudi","not matching");
         Assert.assertEquals(createRepoResponse.getOwner().getType(),"User","not matching");
         System.out.println("statusCode:"+data.statusCode());
@@ -105,7 +109,7 @@ public class ValidateAddAndDeleteData_Functionality extends BaseTest {
     
     @Test(priority = 4, description = "validate get data object", dependsOnMethods = "validateCreateRepofunctionality")
     public void validateExistingRepoErrorfunctionality() {
-    	name = "MPi-World-Touring";
+    	name = "APi-World-Touring";
     	description = "This is your first repo!";
     	homepage = "https://github.com";
     	privateValue = false;    	
@@ -124,23 +128,23 @@ public class ValidateAddAndDeleteData_Functionality extends BaseTest {
     
     @Test(priority = 5, description = "validate get data object",dependsOnMethods = "validateExistingRepoErrorfunctionality")
     public void validateUpdateRepofunctionality() {    	
-    	name = "APi-World-Touring";
-    	description = "Api repositry!";
+    	name = "APi-World-Tour";
+    	description = "Api world tour repositry!";
     	privateValue = false; 
     	
     	UpdateRepoRequest updateRepoRequest = UpdateRepoRequest.builder().name(name).description(description).Private(privateValue).build();
-        Response data = apiHelper.updateRepo(updateRepoRequest,EnvironmentDetails.getProperty("OWNER"), "MPi-World-Touring");
+        Response data = apiHelper.updateRepo(updateRepoRequest,EnvironmentDetails.getProperty("OWNER"), "APi-World-Touring");
         data.then().statusCode(200);
         data.jsonPath().prettyPrint();
         
         UpdateRepoResponse updRepoResponse  = data.as(UpdateRepoResponse.class);
         Assert.assertEquals(data.getStatusCode(), HttpStatus.SC_OK, "Update functionality is not working as expected.");
-        Assert.assertEquals(updRepoResponse.getName(), "APi-World-Touring", "Update data functionality is not working as expected, name is not matching");;
+        Assert.assertEquals(updRepoResponse.getName(), "APi-World-Tour", "Update data functionality is not working as expected, name is not matching");;
     }
     
     @Test(priority = 6, description = "delete data functionality", dependsOnMethods = "validateUpdateRepofunctionality")
     public void validateDeleteRepoFunctionality() {
-        Response data = apiHelper.deleteRepo(EnvironmentDetails.getProperty("OWNER"), "Yesting-Repo");
+        Response data = apiHelper.deleteRepo(EnvironmentDetails.getProperty("OWNER"), "Kesting-Repo");
         data.then().statusCode(204);
         data.prettyPrint(); 
         System.out.println("statusCode:"+data.statusCode());
@@ -148,7 +152,7 @@ public class ValidateAddAndDeleteData_Functionality extends BaseTest {
 
     @Test(priority = 7, description = "validate deleted data in the get data object", dependsOnMethods = "validateDeleteRepoFunctionality")
     public void validateDeletedRepoErrorfunctionality() {
-        Response data = apiHelper.deleteRepo(EnvironmentDetails.getProperty("OWNER"), "Yesting-Repo");
+        Response data = apiHelper.deleteRepo(EnvironmentDetails.getProperty("OWNER"), "Kesting-Repo");
         data.then().statusCode(404);
         data.jsonPath().prettyPrint();
         GetErrorRepoResponse errorRepoResponse  = data.as(GetErrorRepoResponse.class);

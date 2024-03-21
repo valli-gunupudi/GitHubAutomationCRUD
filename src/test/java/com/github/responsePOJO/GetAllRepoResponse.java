@@ -15,16 +15,6 @@ import lombok.NoArgsConstructor;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GetAllRepoResponse {
-	@JsonProperty(value = "id")
-	public String id;
-	@JsonProperty(value = "name")
-	public String name;
-	@JsonProperty(value = "full_name")
-	public String full_name;
-	@JsonProperty(value = "default_branch")
-	public String default_branch;
-	@JsonProperty(value = "node_id")
-	public String node_id;
-	@JsonProperty(value = "private")
-	public boolean Private;
+	@JsonProperty(value = "getRepoResonse")
+	public GetRepoResponse[] getRepoResponse;
 }
